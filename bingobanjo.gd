@@ -56,6 +56,6 @@ func move_right():
 
 
 func _on_activator_area_entered(area: Area2D) -> void:
-	if !active:
+	if !active and area.get_parent().active:
 		active = true
 		emit_signal("activated")

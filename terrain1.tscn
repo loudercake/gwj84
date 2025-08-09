@@ -37,6 +37,57 @@ position = Vector2(-112, 96)
 [node name="Bingobanjo1" parent="Critters" instance=ExtResource("4_ahjem")]
 position = Vector2(3920, 88)
 
+[node name="Bingobanjo5" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5256, 496)
+
+[node name="Bingobanjo6" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5336, 504)
+
+[node name="Bingobanjo7" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5336, 504)
+
+[node name="Bingobanjo8" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5272, 432)
+
+[node name="Bingobanjo9" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5248, 568)
+
+[node name="Bingobanjo10" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5184, 488)
+
+[node name="Bingobanjo11" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5360, 568)
+
+[node name="Bingobanjo12" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5144, 424)
+
+[node name="Bingobanjo13" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5208, 384)
+
+[node name="Bingobanjo14" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5432, 568)
+
+[node name="Bingobanjo15" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5424, 488)
+
+[node name="Bingobanjo16" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5376, 416)
+
+[node name="Bingobanjo17" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5304, 384)
+
+[node name="Bingobanjo18" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5504, 552)
+
+[node name="Bingobanjo19" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5496, 456)
+
+[node name="Bingobanjo20" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5440, 376)
+
+[node name="Bingobanjo21" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5440, 376)
+
 [node name="Bingobanjo2" parent="Critters" instance=ExtResource("4_ahjem")]
 position = Vector2(3688, 136)
 
@@ -65,7 +116,7 @@ unique_name_in_owner = true
 position = Vector2(-96, 112)
 
 [node name="Camera" type="Camera2D" parent="Camera"]
-position = Vector2(2, 0)
+position = Vector2(-16, -16)
 position_smoothing_enabled = true
 
 [connection signal="area_entered" from="CameraReset" to="CameraReset" method="_on_area_entered"]
