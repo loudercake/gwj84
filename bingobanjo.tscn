@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt0ej277x8pk2"]
+
+[ext_resource type="Texture2D" uid="uid://eekpo040dlqk" path="res://bodies.png" id="1_3wutu"]
+[ext_resource type="Script" uid="uid://f3npvwvks3vo" path="res://bingobanjo.gd" id="1_avlq5"]
+[ext_resource type="Texture2D" uid="uid://bupsj2fb2agon" path="res://eyes.png" id="2_avlq5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i83k4"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_i83k4"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_avlq5"]
+resource_name = "animation"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"animate"
+}, {
+"args": [],
+"method": &"animate"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nue4a"]
+_data = {
+&"RESET": SubResource("Animation_i83k4"),
+&"animation": SubResource("Animation_avlq5")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avlq5"]
+radius = 34.0588
+
+[node name="Bingobanjo" type="RigidBody2D"]
+gravity_scale = 0.1
+script = ExtResource("1_avlq5")
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("1_3wutu")
+hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i83k4")
+
+[node name="Eyes" type="Sprite2D" parent="."]
+texture = ExtResource("2_avlq5")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nue4a")
+}
+
+[node name="activator" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activator"]
+shape = SubResource("CircleShape2D_avlq5")
+
+[connection signal="area_entered" from="activator" to="." method="_on_activator_area_entered"]
