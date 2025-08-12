@@ -6,7 +6,7 @@ const colors = [
 	Color("FFFF00")
 ]
 
-const speed = 200
+const speed = 400
 
 @onready var body = $body
 @onready var eyes = $Eyes
@@ -56,6 +56,10 @@ func move_right():
 
 
 func _on_activator_area_entered(area: Area2D) -> void:
+	if area.get_parent().get_class() == "Node2D":
+		return
 	if !active and area.get_parent().active:
 		active = true
+		if freeze:
+			freeze = false
 		emit_signal("activated")

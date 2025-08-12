@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cps65p86icwwm"]
+
+[ext_resource type="Texture2D" uid="uid://c0nqhhtsb4vg" path="res://terrain2.png" id="1_tb12x"]
+
+[node name="terrain2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Terrain" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(336, 1144)
+texture = ExtResource("1_tb12x")

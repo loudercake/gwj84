@@ -1,32 +1,46 @@
-[gd_scene load_steps=7 format=3 uid="uid://db7v1l6w7hfnv"]
+[gd_scene load_steps=11 format=3 uid="uid://db7v1l6w7hfnv"]
 
-[ext_resource type="Script" uid="uid://d1br3lq73bleh" path="res://terrain1.gd" id="1_ql4qq"]
-[ext_resource type="Texture2D" uid="uid://bo7hysiduqla0" path="res://terrain1.png" id="2_y1fkp"]
-[ext_resource type="Script" uid="uid://shbmq51lc7j6" path="res://critters.gd" id="3_u7qw4"]
+[ext_resource type="Script" uid="uid://iljypu3b6kxo" path="res://terrain1.gd" id="1_ql4qq"]
+[ext_resource type="AudioStream" uid="uid://br0hn0koxorh1" path="res://bingobanjo1.mp3" id="2_u7qw4"]
+[ext_resource type="Texture2D" uid="uid://duq8np077sas" path="res://terrain1.png" id="2_y1fkp"]
+[ext_resource type="Script" uid="uid://dyoo0sdx1i08b" path="res://audio.gd" id="3_ahjem"]
+[ext_resource type="Script" uid="uid://dvpaf8u3tu4uf" path="res://critters.gd" id="3_u7qw4"]
 [ext_resource type="PackedScene" uid="uid://bt0ej277x8pk2" path="res://bingobanjo.tscn" id="4_ahjem"]
-[ext_resource type="Script" uid="uid://clmnym83003ql" path="res://camera_reset.gd" id="5_cau0v"]
+[ext_resource type="Script" uid="uid://4omugjh4cnqd" path="res://cheat1.gd" id="5_ql4qq"]
+[ext_resource type="Script" uid="uid://dpvqt3ukxcedu" path="res://camera_override.gd" id="7_u7qw4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
-size = Vector2(120, 104)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1fkp"]
+size = Vector2(607, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahjem"]
+size = Vector2(97, 192.5)
 
 [node name="Terrain1" type="Node2D"]
 script = ExtResource("1_ql4qq")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u7qw4")
+script = ExtResource("3_ahjem")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(20, 322)
 
-[node name="Terrain1" type="Sprite2D" parent="StaticBody2D"]
-modulate = Color(0.560784, 1, 1, 0.486275)
+[node name="Terrain" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0.694118, 1, 1, 1)
 position = Vector2(3092, 142)
 texture = ExtResource("2_y1fkp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-164, -178, -140, -186, -108, -170, -108, -146, -60, -122, -60, -90, -20, -74, -20, -34, -4, 6, 28, 6, 44, -2, 68, -2, 84, -10, 132, -10, 148, -18, 196, -18, 212, -26, 300, -26, 316, -34, 380, -34, 404, -42, 412, -42, 428, -50, 484, -50, 492, -58, 524, -58, 540, -66, 596, -66, 612, -74, 2420, -74, 2436, -82, 2476, -82, 2484, -90, 2556, -90, 2572, -98, 2588, -98, 2596, -106, 2620, -106, 2636, -114, 2716, -114, 2756, -130, 2788, -130, 2804, -138, 2860, -138, 2868, -146, 2908, -146, 2924, -154, 2964, -154, 2980, -162, 3052, -162, 3060, -170, 3292, -170, 3300, -178, 3348, -178, 3372, -186, 3412, -186, 3452, -202, 3516, -202, 3532, -210, 3580, -210, 3604, -194, 3612, -178, 3620, -170, 3620, -162, 3628, -154, 3636, -154, 3644, -154, 3660, -146, 3668, -138, 3668, -130, 3708, -130, 3724, -138, 3748, -138, 3772, -138, 3788, -138, 3804, -146, 3812, -146, 3820, -154, 3828, -154, 3836, -162, 3836, -154, 3852, -154, 3860, -162, 3908, -162, 3916, -170, 3916, -178, 3908, -186, 3900, -178, 3892, -178, 3884, -186, 3884, -194, 3884, -202, 3908, -202, 3916, -194, 3916, -202, 3932, -202, 3940, -202, 3940, -194, 3948, -186, 3948, -178, 3948, -170, -204, 1110)
+polygon = PackedVector2Array(-164, -178, -140, -186, -108, -170, -108, -146, -60, -122, -60, -90, -20, -74, -20, -34, -4, 6, 28, 6, 44, -2, 68, -2, 84, -10, 132, -10, 148, -18, 196, -18, 212, -26, 300, -26, 316, -34, 380, -34, 404, -42, 412, -42, 428, -50, 484, -50, 492, -58, 524, -58, 540, -66, 596, -66, 612, -74, 2420, -74, 2436, -82, 2476, -82, 2484, -90, 2556, -90, 2572, -98, 2588, -98, 2596, -106, 2620, -106, 2636, -114, 2716, -114, 2756, -130, 2788, -130, 2804, -138, 2860, -138, 2868, -146, 2908, -146, 2924, -154, 2964, -154, 2980, -162, 3052, -162, 3060, -170, 3292, -170, 3300, -178, 3348, -178, 3372, -186, 3412, -186, 3452, -202, 3516, -202, 3532, -210, 3580, -210, 3604, -194, 3612, -178, 3620, -170, 3620, -162, 3628, -154, 3636, -154, 3644, -154, 3660, -146, 3668, -138, 3668, -130, 3708, -130, 3724, -138, 3748, -138, 3772, -138, 3788, -138, 3804, -146, 3812, -146, 3820, -154, 3828, -154, 3836, -162, 3836, -154, 3852, -154, 3860, -162, 3908, -162, 3916, -170, 3940, -170, -204, 1110)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(3924, -162, 3940, -162, 3948, -162, 3964, -162, 3972, -162, 3980, -154, 3988, -154, 3996, -154, 4012, -146, 4028, -138, 4044, -138, 4060, -138, 4068, -130, 4084, -130, 4116, -106, 4124, -98, 4148, -106, 4188, -122, 4212, -130, 4236, -138, 4252, -138, 4260, -138, 4276, -138, 4284, -130, 4300, -138, 4316, -138, 4324, -138, 4348, -138, 4380, -138, 4388, -130, 4404, -130, 4420, -138, 4428, -138, 4436, -138, 4452, -138, 4460, -138, 4468, -146, 4476, -146, 4484, -146, 4492, -154, 4508, -154, 4508, -146, 4516, -154, 4516, -146, 4556, -146, 4572, -138, 4604, -138, 4604, -146, 4676, -138, 4700, -138, 4740, -138, 4780, -114, 4804, -114, 4844, -106, 4940, -74, 4956, -74, 4980, -42, 5028, -2, 5052, 46, 5068, 78, 5092, 134, 5116, 166, 5132, 206, 5132, 238, 5148, 270, 5164, 286, 5188, 294, 5228, 294, 5260, 278, 5292, 278, 5340, 294, 5380, 294, 5444, 286, 5476, 286, 5508, 286, 5540, 294, 5628, 294, 5660, 310, 5700, 310, 5748, 302, 5804, 302, 5868, 326, 5908, 350, 5924, 350, 5948, 358, 5964, 366, 5972, 366, 5980, 374, 5996, 374, 5996, 374, 6004, 382, 6012, 390, 6012, 406, 6020, 430, 6012, 438, 6020, 446, 6020, 494, 6028, 542, 6020, 558, 4844, 502)
+polygon = PackedVector2Array(3924, -162, 3940, -170, 3948, -162, 3964, -162, 3972, -162, 3980, -154, 3988, -154, 3996, -154, 4012, -146, 4028, -138, 4044, -138, 4060, -138, 4068, -130, 4084, -130, 4116, -106, 4124, -98, 4148, -106, 4188, -122, 4212, -130, 4236, -138, 4252, -138, 4260, -138, 4276, -138, 4284, -130, 4300, -138, 4316, -138, 4324, -138, 4348, -138, 4380, -138, 4388, -130, 4404, -130, 4420, -138, 4428, -138, 4436, -138, 4452, -138, 4460, -138, 4468, -146, 4476, -146, 4484, -146, 4492, -154, 4508, -154, 4508, -146, 4516, -154, 4516, -146, 4556, -146, 4572, -138, 4604, -138, 4604, -146, 4676, -138, 4700, -138, 4740, -138, 4780, -114, 4804, -114, 4844, -106, 4940, -74, 4956, -74, 4980, -42, 5028, -2, 5052, 46, 5068, 78, 5092, 134, 5116, 166, 5132, 206, 5132, 238, 5148, 270, 5164, 286, 5188, 294, 5228, 294, 5260, 278, 5292, 278, 5340, 294, 5380, 294, 5444, 286, 5476, 286, 5508, 286, 5540, 294, 5628, 294, 5660, 310, 5700, 310, 5748, 302, 5804, 302, 5868, 326, 5908, 350, 5924, 350, 5948, 358, 5964, 366, 5972, 366, 5980, 374, 5996, 374, 5996, 374, 6004, 382, 6012, 390, 6012, 406, 6020, 430, 6012, 438, 6020, 446, 6020, 494, 6028, 542, 6020, 558, 4844, 502)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(6188, 574, 6188, 510, 6180, 502, 6180, 486, 6180, 454, 6188, 438, 6188, 414, 6180, 398, 6196, 366, 6228, 366, 6228, 358, 6244, 358, 6268, 350, 6364, 318, 6412, 310, 6420, 278, 6444, 262, 6444, 230, 6492, 214, 6724, 30)
 
 [node name="Critters" type="Node" parent="."]
 script = ExtResource("3_u7qw4")
@@ -37,57 +51,6 @@ position = Vector2(-112, 96)
 [node name="Bingobanjo1" parent="Critters" instance=ExtResource("4_ahjem")]
 position = Vector2(3920, 88)
 
-[node name="Bingobanjo5" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5256, 496)
-
-[node name="Bingobanjo6" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5336, 504)
-
-[node name="Bingobanjo7" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5336, 504)
-
-[node name="Bingobanjo8" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5272, 432)
-
-[node name="Bingobanjo9" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5248, 568)
-
-[node name="Bingobanjo10" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5184, 488)
-
-[node name="Bingobanjo11" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5360, 568)
-
-[node name="Bingobanjo12" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5144, 424)
-
-[node name="Bingobanjo13" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5208, 384)
-
-[node name="Bingobanjo14" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5432, 568)
-
-[node name="Bingobanjo15" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5424, 488)
-
-[node name="Bingobanjo16" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5376, 416)
-
-[node name="Bingobanjo17" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5304, 384)
-
-[node name="Bingobanjo18" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5504, 552)
-
-[node name="Bingobanjo19" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5496, 456)
-
-[node name="Bingobanjo20" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5440, 376)
-
-[node name="Bingobanjo21" parent="Critters" instance=ExtResource("4_ahjem")]
-position = Vector2(5440, 376)
-
 [node name="Bingobanjo2" parent="Critters" instance=ExtResource("4_ahjem")]
 position = Vector2(3688, 136)
 
@@ -97,26 +60,82 @@ position = Vector2(2080, 168)
 [node name="Bingobanjo4" parent="Critters" instance=ExtResource("4_ahjem")]
 position = Vector2(1088, 192)
 
+[node name="Bingobanjo5" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5224, 432)
+
+[node name="Bingobanjo6" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5248, 504)
+
+[node name="Bingobanjo7" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5152, 416)
+
+[node name="Bingobanjo8" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5200, 568)
+
+[node name="Bingobanjo9" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5320, 544)
+
+[node name="Bingobanjo10" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5408, 536)
+
+[node name="Bingobanjo11" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5320, 424)
+
+[node name="Bingobanjo14" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5608, 584)
+
+[node name="Bingobanjo17" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5688, 608)
+
+[node name="Bingobanjo19" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5576, 544)
+lock_rotation = true
+
+[node name="Bingobanjo20" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5664, 560)
+lock_rotation = true
+
+[node name="Bingobanjo15" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5528, 584)
+
+[node name="Bingobanjo16" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5432, 584)
+
+[node name="Bingobanjo13" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5382, 584)
+
+[node name="Bingobanjo12" parent="Critters" instance=ExtResource("4_ahjem")]
+position = Vector2(5480, 568)
+
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Critters"]
 unique_name_in_owner = true
-position = Vector2(-96, 112)
+position = Vector2(-95, 112)
 remote_path = NodePath("../../Camera")
 update_rotation = false
 
-[node name="CameraReset" type="Area2D" parent="."]
-position = Vector2(4224, 136)
-script = ExtResource("5_cau0v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraReset"]
-position = Vector2(-68, 52)
-shape = SubResource("RectangleShape2D_272bh")
-
 [node name="Camera" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-96, 112)
+position = Vector2(-95, 112)
 
 [node name="Camera" type="Camera2D" parent="Camera"]
-position = Vector2(-16, -16)
+position = Vector2(-3, 0)
 position_smoothing_enabled = true
 
-[connection signal="area_entered" from="CameraReset" to="CameraReset" method="_on_area_entered"]
+[node name="cheat_area" type="Area2D" parent="."]
+position = Vector2(5136, 336)
+script = ExtResource("5_ql4qq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cheat_area"]
+position = Vector2(288.5, 216)
+shape = SubResource("RectangleShape2D_y1fkp")
+
+[node name="camera_override" type="Area2D" parent="."]
+position = Vector2(5792, 560)
+script = ExtResource("7_u7qw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_override"]
+position = Vector2(0, -47.75)
+shape = SubResource("RectangleShape2D_ahjem")
+
+[connection signal="area_entered" from="cheat_area" to="cheat_area" method="_on_area_entered"]
+[connection signal="area_entered" from="camera_override" to="camera_override" method="_on_area_entered"]

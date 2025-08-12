@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bt0ej277x8pk2"]
 
-[ext_resource type="Texture2D" uid="uid://eekpo040dlqk" path="res://bodies.png" id="1_3wutu"]
-[ext_resource type="Script" uid="uid://f3npvwvks3vo" path="res://bingobanjo.gd" id="1_avlq5"]
-[ext_resource type="Texture2D" uid="uid://bupsj2fb2agon" path="res://eyes.png" id="2_avlq5"]
+[ext_resource type="Texture2D" uid="uid://cqra68ck48xw3" path="res://bodies.png" id="1_3wutu"]
+[ext_resource type="Script" uid="uid://xy27cfwydlh6" path="res://bingobanjo.gd" id="1_avlq5"]
+[ext_resource type="Texture2D" uid="uid://dwuc8etsyupka" path="res://eyes.png" id="2_avlq5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i83k4"]
 radius = 20.0
@@ -42,6 +42,7 @@ radius = 34.0588
 
 [node name="Bingobanjo" type="RigidBody2D"]
 gravity_scale = 0.1
+freeze_mode = 1
 script = ExtResource("1_avlq5")
 
 [node name="body" type="Sprite2D" parent="."]
