@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://db7v1l6w7hfnv"]
 
-[ext_resource type="Script" uid="uid://iljypu3b6kxo" path="res://terrain1.gd" id="1_ql4qq"]
-[ext_resource type="AudioStream" uid="uid://br0hn0koxorh1" path="res://bingobanjo1.mp3" id="2_u7qw4"]
-[ext_resource type="Texture2D" uid="uid://duq8np077sas" path="res://terrain1.png" id="2_y1fkp"]
-[ext_resource type="Script" uid="uid://dyoo0sdx1i08b" path="res://audio.gd" id="3_ahjem"]
-[ext_resource type="Script" uid="uid://dvpaf8u3tu4uf" path="res://critters.gd" id="3_u7qw4"]
+[ext_resource type="Script" uid="uid://vyqmj14usmfl" path="res://terrain1.gd" id="1_ql4qq"]
+[ext_resource type="AudioStream" uid="uid://dn5vrpmxo7htq" path="res://bingobanjo1.mp3" id="2_u7qw4"]
+[ext_resource type="Texture2D" uid="uid://01x4gvhkabmc" path="res://terrain1.png" id="2_y1fkp"]
+[ext_resource type="Script" uid="uid://b8761xhw8h83b" path="res://audio.gd" id="3_ahjem"]
+[ext_resource type="Script" uid="uid://dmllernlapte4" path="res://critters.gd" id="3_u7qw4"]
 [ext_resource type="PackedScene" uid="uid://bt0ej277x8pk2" path="res://bingobanjo.tscn" id="4_ahjem"]
-[ext_resource type="Script" uid="uid://4omugjh4cnqd" path="res://cheat1.gd" id="5_ql4qq"]
-[ext_resource type="Script" uid="uid://dpvqt3ukxcedu" path="res://camera_override.gd" id="7_u7qw4"]
+[ext_resource type="Script" uid="uid://boau7bddyqghv" path="res://cheat1.gd" id="5_ql4qq"]
+[ext_resource type="Script" uid="uid://byhndeaai8l3m" path="res://camera_override.gd" id="7_u7qw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1fkp"]
 size = Vector2(607, 58)

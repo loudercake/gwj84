@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cps65p86icwwm"]
+[gd_scene load_steps=3 format=3 uid="uid://cps65p86icwwm"]
 
-[ext_resource type="Texture2D" uid="uid://bce5nvcw38ii7" path="res://terrain2.png" id="1_tb12x"]
+[ext_resource type="Texture2D" uid="uid://dxf2bngs2rffs" path="res://terrain2.png" id="1_tb12x"]
+[ext_resource type="PackedScene" uid="uid://bt0ej277x8pk2" path="res://bingobanjo.tscn" id="2_u63q4"]
 
 [node name="terrain2" type="Node2D"]
 
@@ -11,7 +12,17 @@ position = Vector2(336, 1144)
 texture = ExtResource("1_tb12x")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
 polygon = PackedVector2Array(-182, 88, 288, 5, 287, 38, 230, 86, 224, 121, 224, 121, 209, 130, 209, 130, 193, 162, 193, 162, 181, 142, 161, 152, 161, 152, 141, 179, 141, 179, 119, 185, 87, 205, 48, 229, 6, 261, -13, 297, -13, 297, -26, 363, -12, 423, -12, 423, -13, 468, -2, 487, 24, 515, 157, 546, 179, 599, 172, 664, 172, 664, 184, 737, 184, 737, 210, 778, 210, 778, 224, 805, 214, 828, 214, 828, 199, 841, 199, 841, 176, 856, 176, 856, 148, 862, 148, 862, 137, 876, 137, 878, 99, 918, 99, 918, 81, 970)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
 polygon = PackedVector2Array(414, 4, 414, 4, 414, 104, 414, 104, 403, 139, 381, 171, 359, 193, 323, 227, 292, 252, 241, 276, 196, 301, 196, 301, 175, 330, 175, 330, 172, 342, 172, 342, 163, 357, 171, 376, 178, 404, 178, 404, 184, 421, 184, 421, 245, 448, 277, 523, 293, 644, 279, 704, 300, 760, 322, 789, 340, 833, 331, 871, 427, 996, 427, 996)
+
+[node name="Critters" type="Node" parent="."]
+
+[node name="Bingobanjo" parent="Critters" instance=ExtResource("2_u63q4")]
+position = Vector2(296, 146)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(215, 255)
